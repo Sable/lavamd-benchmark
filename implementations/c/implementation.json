@@ -1,0 +1,35 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"c",
+    "core-source-files":[
+        { "file": "./kernel/kernel_cpu.c" }
+    ],
+    "runner-source-file": { "file": "./main.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-boxes1d ",
+            "value": { 
+                "expand": "/experiment/input-size"
+            }
+        }
+    ],
+    "libraries":[
+        { "file": "./util/num/num.c" },
+        { "file": "./util/timer/timer.c" },
+        { "file": "./common/common_rand.c"}
+    ],
+    "include-directories":[
+        { "file": "./kernel/" },
+        { "file": "./util/num/" },
+        { "file": "./util/timer/" },
+        { "file": "./common/" }
+    ],
+    "dependencies": [
+        {
+            "source": "https://github.com/Sable/ostrich-c-implementation-common.git",
+            "destination": { "file": "./common" }
+        }
+    ]
+}

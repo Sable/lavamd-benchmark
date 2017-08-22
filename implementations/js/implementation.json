@@ -1,0 +1,21 @@
+{
+    "type": "implementation",
+    "short-name":"js",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"js",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./lavamd.js" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "file": "./common/common_rand.js" }
+    ],
+    "dependencies": [
+        {
+            "source": "https://github.com/Sable/ostrich-js-implementation-common.git",
+            "destination": { "file": "./common/" }
+        }
+    ]
+}

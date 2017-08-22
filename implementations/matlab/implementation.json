@@ -1,0 +1,24 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./kernel_cpu.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "file": "./common/createMatrixRandi2.m" },
+        { "file": "./common/commonRandom.m" },
+        { "file": "./common/setRandomSeed.m" }
+    ],
+    "dependencies": [
+        {
+            "source": "https://github.com/Sable/ostrich-matlab-implementation-common.git",
+            "destination": { "file": "./common" }
+        }
+    ]
+}
