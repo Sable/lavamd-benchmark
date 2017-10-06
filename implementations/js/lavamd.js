@@ -175,6 +175,7 @@ function lavamd(boxes1d) {
 
     kernel_cpu(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu);
 
+    time1 = performance.now();
     var sum = space_mem();
     for(i=0; i<dim_cpu.space_elem; i=i+1) {
         sum.v += fv_cpu[i].v;
@@ -183,7 +184,7 @@ function lavamd(boxes1d) {
         sum.z += fv_cpu[i].z;
     }
 
-    time1 = performance.now();
+    
     console.log("Total time: " + (time1-time0) / 1000 + " s");
     return { 
       status: 1,
